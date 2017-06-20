@@ -25,4 +25,7 @@ io.on('connection',(socket)=>{
     console.log(res);
   })
 
+  socket.on('updateCurrentGesture',(res)=>{
+    console.log(res)
+  })
 })
