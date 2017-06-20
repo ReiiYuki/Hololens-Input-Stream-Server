@@ -14,7 +14,7 @@ io.on('connection',(socket)=>{
 
   socket.on('identify',(res)=>{
     socket.type = res.type
-    console.log(res.type);
+    socket.emit('identifySuccess')
   })
 
   socket.on('updateLeftHandPosition',(res)=>{
