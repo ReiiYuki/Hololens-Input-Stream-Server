@@ -35,7 +35,9 @@ io.on('connection',(socket)=>{
   })
 
   socket.on('updateCurrentGesture',(res)=>{
-    console.log(res)
+    let holo = devices.find((device)=>(device.type=="Holo"))
+    if (holo)
+      holo.emit('gestureUpdate',res)
   })
 
   socket.on('disconnect',()=>{
