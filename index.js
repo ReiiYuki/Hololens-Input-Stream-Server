@@ -23,12 +23,15 @@ io.on('connection',(socket)=>{
   })
 
   socket.on('updateLeftHandPosition',(res)=>{
-    console.log(res);
-    console.log(devices.find((device)=>(device.type=="Holo")))
+    let holo = devices.find((device)=>(device.type=="Holo"))
+    if (holo)
+      holo.emit('leftHandPositionUpdate',res)
   })
 
   socket.on('updateRightHandPosition',(res)=>{
-    console.log(res);
+    let holo = devices.find((device)=>(device.type=="Holo"))
+    if (holo)
+      holo.emit('rightHandPositionUpdate',res)
   })
 
   socket.on('updateCurrentGesture',(res)=>{
