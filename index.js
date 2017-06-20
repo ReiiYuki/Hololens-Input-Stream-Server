@@ -1,11 +1,18 @@
+// Initialzie
 let app = require('express')()
-let http = require('http').Server(app)
-let io = require('socket.io')(http)
+let PORT = process.env.PORT || 4000;
+let cors = require('cors');
 
-io.on('connection', (socket)=>{
-  console.log('a user connected')
+app.use(cors());
+let server = app.listen(PORT,()=> {
+  console.log('Start Server at PORT '+PORT);
 })
 
-http.listen(4000,()=>{
-  console.log('Listening on 4000')
+let io = require('socket.io').listen(server);
+io.on('connection',(socket)=>{
+  console.log("Hi"+socket.id)
+
+  socket.on('identify',(id,res)=>{
+    console.log(res);
+  })
 })
