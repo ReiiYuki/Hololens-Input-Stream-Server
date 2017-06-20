@@ -14,6 +14,15 @@ io.on('connection',(socket)=>{
 
   socket.on('identify',(res)=>{
     socket.type = res.type
+    console.log(res.type);
+  })
+
+  socket.on('updateLeftHandPosition',(res)=>{
+    console.log(res);
+  })
+
+  socket.on('updateRightHandPosition',(res)=>{
+    console.log(res);
   })
 
 })
