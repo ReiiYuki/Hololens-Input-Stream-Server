@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/ReiiYuki/Hololens-Input-Stream-Server.git",
   "author": "ReiiYuki <voraton.l@ku.th>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  }
 }
