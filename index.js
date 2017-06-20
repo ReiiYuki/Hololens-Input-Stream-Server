@@ -8,11 +8,12 @@ let server = app.listen(PORT,()=> {
   console.log('Start Server at PORT '+PORT);
 })
 
-let io = require('socket.io').listen(server);
-io.on('connection',(socket)=>{
-  console.log("Hi"+socket.id)
+let io = require('socket.io').listen(server)
 
-  socket.on('identify',(id,res)=>{
-    console.log(res);
+io.on('connection',(socket)=>{
+
+  socket.on('identify',(res)=>{
+    socket.type = res.type
   })
+
 })
