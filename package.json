@@ -1,0 +1,8 @@
+{
+  "name": "Hololens-Streaming-Input-Server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ReiiYuki/Hololens-Input-Stream-Server.git",
+  "author": "ReiiYuki <voraton.l@ku.th>",
+  "license": "MIT"
+}
